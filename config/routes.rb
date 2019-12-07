@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/home'
+  get 'sessions/new'
+  get 'sessions/create'
+  root 'sessions#home'
   resources :interpretations
   resources :dreams
   resources :users
