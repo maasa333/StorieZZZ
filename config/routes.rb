@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   get 'sessions/home'
   get 'sessions/new'
   get 'sessions/create'
+
+  get '/signup', to: 'users#new'
+
   root 'sessions#home'
+  
   resources :interpretations
   resources :dreams
   resources :users
