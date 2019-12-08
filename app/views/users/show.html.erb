@@ -7,9 +7,10 @@
 
 <h3>My Dreams</h3>
 <% @user.dreams.each do |dream| %>
-    <%= dream.date %><br>
-    <%= dream.description %><br>
-    <%= dream.category %>
+    Date: <%= dream.date %><br>
+    Description: <%= dream.description %><br>
+    Category: <%= dream.category %><br>
+    Interpretations: <%= dream.interpretation %><br>
 <% end %>
 <%# link_to "My Dreams" %>
 

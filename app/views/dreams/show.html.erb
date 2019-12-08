@@ -1,3 +1,12 @@
 <% redirect_if_not_logged_in %>
 
-<%= @dream.description %>
+<%= @dream.date %><br>
+<%= @dream.description %><br>
+<br>
+
+<%# edit button for user %>
+<%# delete button for user %>
+
+<%# add interpretation for this dream %>
+<%= link_to "Interpret this dream", new_dream_interpretation_path(@dream) %>
+<%# show all interpretations on this dream %>
