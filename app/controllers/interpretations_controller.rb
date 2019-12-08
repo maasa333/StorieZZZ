@@ -4,11 +4,12 @@ class InterpretationsController < ApplicationController
     end
     
     def create
+        # binding.pry
         @interpretation = current_user.interpretations.build(interpretation_params)
         if @interpretation.save
             redirect_to interpretation_path(@interpretation)
         else
-            render :new    
+            render :new
         end
     end
 

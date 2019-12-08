@@ -1,16 +1,16 @@
 <% redirect_if_not_logged_in %>
 
-<h2>Welcome <%= @user.username %>!</h2>
+<h2>Welcome <%= current_user.username %>!</h2>
 
-<%= link_to "New Dream", new_dream_path %>
+<%= link_to "New Dream", new_dream_path %><br>
+<%= link_to "See Everyone's Dreams", dreams_path %>
 <br><br>
 
 <h3>My Dreams</h3>
-<% @user.dreams.each do |dream| %>
+<% current_user.dreams.each do |dream| %>
     Date: <%= dream.date %><br>
     Description: <%= dream.description %><br>
     Category: <%= dream.category %><br>
-    Interpretations: <%= dream.interpretation %><br>
 <% end %>
 <%# link_to "My Dreams" %>
 

@@ -14,7 +14,12 @@ class DreamsController < ApplicationController
 
     def show
         @dream = Dream.find_by(id: params[:id])
+        @interpretation = Interpretation.new
     end
+
+    def index
+        @dreams = Dream.all
+    end 
 
     private
 
