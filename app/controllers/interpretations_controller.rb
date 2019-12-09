@@ -4,7 +4,6 @@ class InterpretationsController < ApplicationController
     end
     
     def create
-        # binding.pry
         @interpretation = current_user.interpretations.build(interpretation_params)
         if @interpretation.save
             redirect_to interpretation_path(@interpretation)
@@ -15,6 +14,12 @@ class InterpretationsController < ApplicationController
 
     def show
         @interpretation = interpretation.find_by(id: params[:id])
+    end
+
+    def index
+        if params[:dream_id] && @dream = Dream.find_by_id(params[:dream_id])
+            @interpretations = @dream.interpretations
+        end
     end
 
     private

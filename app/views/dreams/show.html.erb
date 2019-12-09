@@ -4,8 +4,8 @@
 <%= @dream.description %><br>
 <br>
 
-<%# edit button for user %>
-<%# delete button for user %>
+<%# edit button for this dream's user %>
+<%# delete button for this dream's user %>
 
 What do you think this dream means?? 
 <br>
@@ -16,5 +16,4 @@ What do you think this dream means??
     <%= f.submit "Submit" %>
 <% end %>
 
-<%#= link_to "Interpret this dream", new_dream_interpretation_path(@dream) %>
-<%# show all interpretations on this dream %>
+<%= link_to "See all interpretations", dream_interpretations_path(@dream) %>

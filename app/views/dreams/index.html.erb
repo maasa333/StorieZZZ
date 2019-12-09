@@ -2,14 +2,14 @@
 
 <table>
     <tr>
-        <th>Username</th>
-        <th>Dream</th>
+        <th>Category</th>
+        <th>Dream Description</th>
         <th>Date</th>
     </tr>
     <% @dreams.each do |dream| %>
     <tr>
-        <td><%= dream.user.username %></td>
-        <td><%= dream.description %></td>
+        <td><%= dream.category.name %></td>
+        <td><%= link_to dream.description, dream_path(dream) %></td>
         <td><%= dream.date %></td>
     </tr>
     <% end %>
