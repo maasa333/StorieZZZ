@@ -1,10 +1,13 @@
 class DreamsController < ApplicationController
     def new
         @dream = Dream.new
+        @categories = Category.all.map{|c| [ c.name, c.id ]}
     end
     
     def create
         @dream = current_user.dreams.build(dream_params)
+        @dream.category_id = params[:category_id] 
+
         if @dream.save
             redirect_to dream_path(@dream)
         else
