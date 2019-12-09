@@ -10,7 +10,7 @@
 <% current_user.dreams.each do |dream| %>
     Date: <%= dream.date %><br>
     Description: <%= dream.description %><br>
-    Category: <%= dream.category %><br>
+    Category: <%= dream.category.name %><br>
 <% end %>
 <%# link_to "My Dreams" %>
 

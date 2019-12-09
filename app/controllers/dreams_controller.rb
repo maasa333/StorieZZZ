@@ -6,7 +6,7 @@ class DreamsController < ApplicationController
     
     def create
         @dream = current_user.dreams.build(dream_params)
-        @dream.category_id = params[:category_id] 
+        @dream.category_id = params[:dream][:category_id] 
 
         if @dream.save
             redirect_to dream_path(@dream)

@@ -1,5 +1,16 @@
 <h2>Everyone's Dreams</h2>
 
-<% @dreams.each do |dream| %>
-    <%= dream.description %><br>
-<% end %>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Dream</th>
+        <th>Date</th>
+    </tr>
+    <% @dreams.each do |dream| %>
+    <tr>
+        <td><%= dream.user.username %></td>
+        <td><%= dream.description %></td>
+        <td><%= dream.date %></td>
+    </tr>
+    <% end %>
+</table>
