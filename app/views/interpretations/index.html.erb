@@ -1,3 +1,3 @@
 <% @interpretations.each do |i| %>
-    <%= i.description %><br>
+    <%= i.description %> <%= link_to "Edit" %>/<%= link_to "Delete", interpretation_path(i), method: :delete %><br>
 <% end %>

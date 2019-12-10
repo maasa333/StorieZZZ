@@ -1,6 +1,10 @@
 class DreamsController < ApplicationController
     def new
-        @dream = Dream.new
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @dream = @user.dreams.build
+        else
+            @dream = Dream.new 
+        end
         @categories = Category.all.map{|c| [ c.name, c.id ]}
     end
     
@@ -17,7 +21,7 @@ class DreamsController < ApplicationController
 
     def show
         @dream = Dream.find_by(id: params[:id])
-        @interpretation = Interpretation.new
+        @interpretation = @dream.interpretations.build
     end
 
     def index
