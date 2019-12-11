@@ -45,6 +45,12 @@ class DreamsController < ApplicationController
         end
     end
 
+    def destroy
+        @dream = Dream.find_by(params[:id])
+        @dream.destroy
+        redirect_to dreams_path
+    end
+
     private
 
     def dream_params

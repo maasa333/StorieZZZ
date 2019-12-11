@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   resources :interpretations
   
   resources :dreams do 
-    resources :interpretations #, only: [:index, :new, :create]
+    resources :interpretations
   end
   
   resources :users do 
-    resources :dreams #, only: [:index, :new, :create]
+    resources :dreams
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
