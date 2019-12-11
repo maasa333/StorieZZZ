@@ -4,17 +4,12 @@
 <%= @dream.description %><br>
 <br>
 
-<%# edit button for this dream's user %>
-<%# delete button for this dream's user %>
-
-What do you think this dream means?? 
-<br>
-<%= form_for([@interpretation.dream, @interpretation]) do |f| %>
-    <%= f.label "My interpretation..." %><br>
-    <%= f.text_area :description %><br>
-
-    <%= f.submit "Submit" %>
+<% if current_user.id == @dream.user_id %>
+    <%= link_to "Edit", edit_dream_path %>
+    <%= link_to "Delete" %>
 <% end %>
 <br>
+<br>
+<%= link_to "Interpret this dream", new_dream_interpretation_path(@dream) %>
 
 <%= link_to "See other interpretations", dream_interpretations_path(@dream) %>

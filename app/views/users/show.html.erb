@@ -7,11 +7,22 @@
 <br><br>
 
 <h3>My Dreams</h3>
-<% current_user.dreams.each do |dream| %>
-    Date: <%= dream.date %><br>
-    Description: <%= dream.description %><br>
-    Category: <%= dream.category.name %><br>
-<% end %>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Dream Description</th>
+        <th>Date</th>
+    </tr>
+    <% current_user.dreams.each do |dream| %>
+    <tr>
+        <td><%= dream.category.name %></td>
+        <td><%= link_to dream.description, dream_path(dream) %></td>
+        <td><%= dream.date %></td>
+    </tr>
+    <% end %>
+</table>
+
 <%# link_to "My Dreams" %>
 
 <%# link_to "All Dreams" %>

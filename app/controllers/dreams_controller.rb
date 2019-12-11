@@ -28,6 +28,23 @@ class DreamsController < ApplicationController
         @dreams = Dream.all
     end 
 
+    def edit
+        @dream = Dream.find_by(id: params[:id])
+        @categories = Category.all.map{|c| [ c.name, c.id ]}
+        redirect_to dreams_path if current_user.id != @dream.user_id
+    end
+
+    def update
+        @dream = Dream.find_by(id: params[:id])
+        @dream.update(dream_params)
+
+        if @dream.save
+            redirect_to dream_path(@dream)
+        else
+            render :edit   
+        end
+    end
+
     private
 
     def dream_params

@@ -8,16 +8,12 @@ class InterpretationsController < ApplicationController
     end
 
     def new
-        # if params[:dream_id] && @dream = Dream.find_by_id(params[:dream_id])
-        #     @interpretation = @dream.interpretations.build
-        # else
-        #     @interpretation = Interpretation.new
-        # end
         @dream = Dream.find(params[:dream_id])
         @interpretation = Interpretation.new
     end
     
     def create
+        # binding.pry
         @interpretation = current_user.interpretations.build(interpretation_params)
         @interpretation.dream_id = params[:dream_id]
         if @interpretation.save
@@ -28,7 +24,6 @@ class InterpretationsController < ApplicationController
     end
 
     def destroy
-        # binding.pry
         @interpretation = Interpretation.find_by(params[:id])
         @dream = @interpretation.dream
         @interpretation.destroy

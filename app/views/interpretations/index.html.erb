@@ -1,3 +1,4 @@
+<h2>Interpretations of this Dream</h2>
 <% @interpretations.each do |i| %>
     <%= i.description %> <%= link_to "Edit" %>/<%= link_to "Delete", interpretation_path(i), method: :delete %><br>
 <% end %>
