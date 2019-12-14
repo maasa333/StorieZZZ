@@ -7,6 +7,6 @@ class Dream < ApplicationRecord
   validates :date, presence: true
 
   def self.date_order
-    order(:date)
+    order(:date).reverse_order
   end
 end

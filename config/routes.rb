@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+
   resources :categories, only: [:new, :create]
 
   get '/signup', to: 'users#new'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#google'
   
   resources :interpretations
-  
+
   resources :dreams do 
     resources :interpretations
   end

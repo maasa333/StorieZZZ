@@ -46,7 +46,7 @@ class DreamsController < ApplicationController
     end
 
     def destroy
-        @dream = Dream.find_by(params[:id])
+        @dream = Dream.find_by(id: params[:id])
         @dream.destroy
         redirect_to dreams_path
     end
@@ -54,6 +54,6 @@ class DreamsController < ApplicationController
     private
 
     def dream_params
-        params.require(:dream).permit(:category, :description, :date)
+        params.require(:dream).permit(:category, :description, :date, :search)
     end
 end

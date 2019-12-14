@@ -8,7 +8,7 @@
     <%= f.text_area :description %><br>
 
     <%= f.label :category %>
-    <%= f.select :category_id, options_for_select(@categories), prompt: "Select One" %><br>
+    <%= f.select :category_id, options_for_select(@categories.sort), prompt: "Select One" %><br>
 
     <%= f.submit "Submit" %>
 <% end %>
