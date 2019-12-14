@@ -12,6 +12,10 @@ class CategoriesController < ApplicationController
         end
     end
 
+    def index
+        @categories = Category.alpha
+    end
+
     private
 
     def category_params

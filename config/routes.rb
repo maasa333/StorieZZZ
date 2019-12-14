@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   root 'sessions#home'
 
   get '/auth/google_oauth2/callback', to: 'sessions#google'
 
-  resources :categories, only: [:new, :create] #do 
-  #   resources :dreams
-  # end
+  resources :categories, except: [:edit, :update, :destroy] do 
+    resources :dreams, only: [:index]
+  end
   
   resources :interpretations
 
