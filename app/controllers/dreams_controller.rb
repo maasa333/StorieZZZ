@@ -25,7 +25,7 @@ class DreamsController < ApplicationController
     end
 
     def index
-        @dreams = Dream.all
+        @dreams = Dream.date_order
     end 
 
     def edit

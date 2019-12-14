@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   resources :categories, only: [:new, :create]
 
   get '/signup', to: 'users#new'
@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   root 'sessions#home'
-  
-  # resources :sessions, only: [:home, :new, :create, :destroy]
+
+  get '/auth/google_oauth2/callback', to: 'sessions#google'
   
   resources :interpretations
   
