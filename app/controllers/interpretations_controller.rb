@@ -3,7 +3,7 @@ class InterpretationsController < ApplicationController
         if params[:dream_id] && @dream = Dream.find_by_id(params[:dream_id])
             @interpretations = @dream.interpretations
         else
-            @interpretations = Interpretation.all
+            @interpretations = Interpretation.date_order
         end
     end
 
@@ -13,7 +13,6 @@ class InterpretationsController < ApplicationController
     end
     
     def create
-        # binding.pry
         @interpretation = current_user.interpretations.build(interpretation_params)
         @interpretation.dream_id = params[:dream_id]
         if @interpretation.save

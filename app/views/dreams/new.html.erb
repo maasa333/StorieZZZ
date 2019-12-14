@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals: {object: @dream}%>
+
 <h2>New Dream</h2>
 
 <%= form_for(@dream) do |f| %>
@@ -8,7 +10,7 @@
     <%= f.text_area :description %><br>
 
     <%= f.label :category %>
-    <%= f.select :category_id, options_for_select(@categories.sort), prompt: "Select One" %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "Select One" %>
 
     <%= f.submit "Submit" %>
 <% end %>
