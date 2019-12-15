@@ -1,5 +1,5 @@
-<h2>All Categories</h2>
+<h2>Find Dreams by Category</h2>
 
 <% @categories.each do |c| %>
-    <%= link_to c.name %><br>
+    <%= link_to c.name, category_path(c) %><br>
 <% end %>

@@ -1,5 +1,7 @@
 <h2>Everyone's Dreams</h2>
 
+<h3><%= link_to "Dreams by Category", categories_path %></h3>
+
 <table>
     <tr>
         <th>Category</th>
@@ -10,7 +12,7 @@
     <tr>
         <td><%= dream.category.name %></td>
         <td><%= link_to dream.description, dream_path(dream) %></td>
-        <td><%= dream.date %></td>
+        <td><%= dream.date.strftime("%m/%d/%Y") %></td>
     </tr>
     <% end %>
 </table>

@@ -2,10 +2,6 @@
 
 <h2>Welcome <%= current_user.username %>!</h2>
 
-<%= link_to "New Dream", new_dream_path %><br>
-<%= link_to "See Everyone's Dreams", dreams_path %>
-<br><br>
-
 <h3>My Dreams</h3>
 
 <table>
@@ -14,15 +10,11 @@
         <th>Dream Description</th>
         <th>Date</th>
     </tr>
-    <% current_user.dreams.each do |dream| %>
+    <% current_user.dreams.date_order.each do |dream| %>
     <tr>
         <td><%= dream.category.name %></td>
         <td><%= link_to dream.description, dream_path(dream) %></td>
-        <td><%= dream.date %></td>
+        <td><%= dream.date.strftime("%m/%d/%Y") %></td>
     </tr>
     <% end %>
 </table>
-
-<%# link_to "My Dreams" %>
-
-<%# link_to "All Dreams" %>

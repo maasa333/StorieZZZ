@@ -16,6 +16,10 @@ class CategoriesController < ApplicationController
         @categories = Category.alpha
     end
 
+    def show
+       @category = Category.find_by(id: params[:id])
+    end
+
     private
 
     def category_params

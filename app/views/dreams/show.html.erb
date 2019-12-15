@@ -1,8 +1,8 @@
 <% redirect_if_not_logged_in %>
 
-<%= @dream.date %><br>
-<%= @dream.description %><br>
-<br>
+<h4>Date: <%= @dream.date.strftime("%m/%d/%Y") %></h4>
+<h4>Category: <%= @dream.category.name %></h4>
+<h4>Description: <%= @dream.description %></h4>
 
 <% if current_user.id == @dream.user_id %>
     <%= link_to "Edit", edit_dream_path %>
@@ -11,5 +11,5 @@
 <br>
 <br>
 <%= link_to "Interpret this dream", new_dream_interpretation_path(@dream) %>
-
+<br>
 <%= link_to "See other interpretations", dream_interpretations_path(@dream) %>
