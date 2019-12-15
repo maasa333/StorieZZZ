@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-    helper DateHelper
+    before_action :set_dream, except: [:new, :create, :index]
     
     def new
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
@@ -21,7 +21,6 @@ class DreamsController < ApplicationController
     end
 
     def show
-        @dream = Dream.find_by(id: params[:id])
         @interpretation = @dream.interpretations.build
     end
 
@@ -30,13 +29,11 @@ class DreamsController < ApplicationController
     end 
 
     def edit
-        @dream = Dream.find_by(id: params[:id])
         @categories = Category.all.map{|c| [ c.name, c.id ]}
         redirect_to dreams_path if current_user.id != @dream.user_id
     end
 
     def update
-        @dream = Dream.find_by(id: params[:id])
         @dream.update(dream_params)
 
         if @dream.save
@@ -47,9 +44,12 @@ class DreamsController < ApplicationController
     end
 
     def destroy
-        @dream = Dream.find_by(id: params[:id])
         @dream.destroy
         redirect_to dreams_path
+    end
+
+    def set_dream
+        @dream = Dream.find_by(id: params[:id])
     end
 
     private
