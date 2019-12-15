@@ -1,6 +1,6 @@
 <% redirect_if_not_logged_in %>
 
-<h4>Date: <%= @dream.date.strftime("%m/%d/%Y") %></h4>
+<h4>Date: <%= format_date(@dream.date) %></h4>
 <h4>Category: <%= @dream.category.name %></h4>
 <h4>Description: <%= @dream.description %></h4>
 

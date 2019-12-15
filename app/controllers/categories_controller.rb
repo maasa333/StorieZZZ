@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+    helper DateHelper
+
     def new
         @category = Category.new
     end

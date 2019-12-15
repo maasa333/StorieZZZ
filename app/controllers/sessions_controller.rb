@@ -21,11 +21,11 @@ class SessionsController < ApplicationController
 
   def google
     @user = User.find_or_create_by(email: auth[:info][:email]) do |user|
-      user.username = auth[:info][:first_name]
-      user.password = SecureRandom.hex(10)
+      user.username = auth[:info][:name]
+      user.password = SecureRandom.hex
     end
-
-    if @user.save
+    
+    if @user
       session[:user_id] = @user.id 
       redirect_to user_path(@user)
     else

@@ -3,5 +3,8 @@
 
 <h4>Interpretations of this dream:</h4>
 <% @interpretations.each do |i| %>
-    <%= i.description %> <%= link_to "Edit" %>/<%= link_to "Delete", interpretation_path(i), method: :delete %><br>
+    <%= i.description %><br>
+    <% if i.user_id == current_user.id %>
+        <%= link_to "Edit" %>/<%= link_to "Delete", interpretation_path(i), method: :delete %><br>
+    <% end%>
 <% end %>

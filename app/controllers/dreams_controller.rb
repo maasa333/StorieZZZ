@@ -1,4 +1,6 @@
 class DreamsController < ApplicationController
+    helper DateHelper
+    
     def new
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @dream = @user.dreams.build

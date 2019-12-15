@@ -8,7 +8,7 @@
     <% @category.dreams.each do |dream| %>
     <tr>
         <td><%= link_to dream.description, dream_path(dream) %></td>
-        <td><%= dream.date %></td>
+        <td><%= format_date(dream.date) %></td>
     </tr>
     <% end %>
 </table>
