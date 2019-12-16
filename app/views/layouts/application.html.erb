@@ -5,20 +5,48 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div class="navbar">
-      <% if logged_in? %>
-        <%= link_to "My Dreams", root_path %> / 
-        <%= link_to "New Dream", new_dream_path %> / 
-        <%= link_to "See Everyone's Dreams", dreams_path %> / 
-        <%= link_to "Log Out", logout_path %>
-      <% end %>
+    <header class="header">
+      <div class="container">
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              StorieZZZ
+            </div>
+          </div>
+          <div class="level-right">
+            <p class="level-item">
+              <% if logged_in? %>
+                <%= link_to "My Dreams", root_path, class: "button is-primary is-inverted is-outlined" %>
+                <%= link_to "New Dream", new_dream_path, class: "button is-primary is-inverted is-outlined" %>
+                <%= link_to "See Everyone's Dreams", dreams_path, class: "button is-primary is-inverted is-outlined" %> 
+                <%= link_to "Log Out", logout_path, class: "button is-danger is-inverted is-outlined" %>
+              <% else %>
+                <%= link_to "Sign Up", signup_path, class: "button is-primary is-inverted is-outlined" %>
+                <%= link_to "Log In", login_path, class: "button is-primary is-inverted is-outlined" %>
+                <%= link_to "Log In with Google", '/auth/google_oauth2', method: :post, class: "button is-primary is-inverted is-outlined" %>
+              <% end %>
+            </p>
+          </div>
+        </nav>
+      </div>
+    </header>
+  <section class="section">
+    <div class="container">
+      <%= yield %>
     </div>
-
-    <%= yield %>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      Copyright © 2019 SinatraZZZ. All rights reserved.
+    </div>
+  </footer>
   </body>
+
 </html>

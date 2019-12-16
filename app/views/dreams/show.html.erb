@@ -5,11 +5,10 @@
 <h4>Description: <%= @dream.description %></h4>
 
 <% if current_user.id == @dream.user_id %>
-    <%= link_to "Edit", edit_dream_path %>
-    <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to "Edit", edit_dream_path, class: "button is-primary is-rounded" %>
+    <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded" %>
 <% end %>
 <br>
 <br>
-<%= link_to "Interpret this dream", new_dream_interpretation_path(@dream) %>
-<br>
-<%= link_to "See other interpretations", dream_interpretations_path(@dream) %>
+<%= link_to "Interpret this dream", new_dream_interpretation_path(@dream), class: "button is-info is-rounded" %>
+<%= link_to "See other interpretations", dream_interpretations_path(@dream), class: "button is-info is-rounded" %>
