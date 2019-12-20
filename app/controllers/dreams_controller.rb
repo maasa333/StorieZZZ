@@ -45,11 +45,15 @@ class DreamsController < ApplicationController
 
     def destroy
         @dream.destroy
-        redirect_to dreams_path
+        redirect_to user_path
     end
 
     def set_dream
         @dream = Dream.find_by(id: params[:id])
+        if !@dream
+            flash[:alert] = "You can only see existing dreams!"
+            redirect_to dreams_path
+        end
     end
 
     private

@@ -23,7 +23,7 @@ class InterpretationsController < ApplicationController
     end
 
     def destroy
-        @interpretation = Interpretation.find_by(params[:id])
+        @interpretation = Interpretation.find_by(id: params[:id])
         @dream = @interpretation.dream
         @interpretation.destroy
         redirect_to dream_interpretations_path(@dream)

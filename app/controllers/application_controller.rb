@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
     helper_method :logged_in?, :redirect_if_not_logged_in, :current_user, :format_date
 
+    #add protection for delete/edit route
+    #before_action for destroy action, does user own the current record
+
     def logged_in?
         !!session[:user_id]
     end

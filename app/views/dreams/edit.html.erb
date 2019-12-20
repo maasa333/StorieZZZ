@@ -2,15 +2,4 @@
 
 <h2>Edit Dream</h2>
 
-<%= form_for(@dream) do |f| %>
-    <%= f.label :date %>
-    <%= f.date_field :date %><br>
-
-    <%= f.label :description %>
-    <%= f.text_area :description %><br>
-
-    <%= f.label :category %>
-    <%= f.select :category_id, options_for_select(@categories) %><br>
-
-    <%= f.submit "Update" %>
-<% end %>
+<%= render 'form'%>

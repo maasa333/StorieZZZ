@@ -1,0 +1,12 @@
+<%= form_for(@dream) do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %><br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "textarea" %><br>
+
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: "Select One" %><br>
+
+    <%= f.submit "Submit", class: "button is-primary is-rounded" %>
+<% end %>
