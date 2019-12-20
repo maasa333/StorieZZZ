@@ -24,9 +24,14 @@ class InterpretationsController < ApplicationController
 
     def destroy
         @interpretation = Interpretation.find_by(id: params[:id])
-        @dream = @interpretation.dream
-        @interpretation.destroy
-        redirect_to dream_interpretations_path(@dream)
+        if @interpretation && @interpretation.user_id == current_user.id
+            @dream = @interpretation.dream
+            @interpretation.destroy
+            redirect_to dream_interpretations_path(@dream)
+        else
+            flash[:error] = "You can only delete your own existing interpretations"
+            redirect_to dreams_path
+        end
     end
 
     private

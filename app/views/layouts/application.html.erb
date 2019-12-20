@@ -39,9 +39,9 @@
     </header>
   <section class="section">
     <div class="container">
-    
+
       <% flash.each do |type, msg| %>
-        <div>
+        <div id="error_explanation">
           <%= msg %>
         </div>
       <% end %>
