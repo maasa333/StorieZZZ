@@ -1,7 +1,5 @@
 <% if logged_in? %>
-    <h1>Hi <%= current_user.username %>!</h1>
-    <h2>
+    <h2>Hi <%= current_user.username %>!</h2>
 <% else %>
-    <h1>Welcome to StorieZZZ</h1>
-    <%#= link_to "Log In with Google", '/auth/google_oauth2', method: :post, class: "button is-primary is-inverted is-outlined" %>
+    <h2>Welcome to StorieZZZ</h2>
 <% end %>

@@ -1,8 +1,8 @@
 <% redirect_if_not_logged_in %>
 
-<h2 class="title">Everyone's Dreams</h2>
+<h2>Everyone's Dreams</h2>
 
-<h3><%= link_to "Dreams by Category", categories_path %></h3>
+<h3><%= link_to "Dreams by Category", categories_path, class: "button is-primary is-rounded" %></h3>
 
 <table class="table">
     <tr>

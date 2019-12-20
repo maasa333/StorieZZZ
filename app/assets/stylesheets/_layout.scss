@@ -1,23 +1,27 @@
 body {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    height:100vh;
-  }
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100vh;
+}
 .header {
-    background-color: rgba(37, 38, 116, 0.699);
-    padding:1.5rem 1.5rem;
-  }
+  background-color: rgba(37, 38, 116, 0.699);
+  padding:1.5rem 1.5rem;
+}
 .section {
-    display:flex;
-    flex:1 0 auto;
+  display:flex;
+  flex:1 0 auto;
 }
 div.level-item {
-    font-size: xx-large;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 600;
+  font-size: xx-large;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;    
+  font-weight: 600;
 }
-.navbar-fixed-top {
-    position: fixed; top: 0; left: 0; width: 100%; 
+section.section div.container h2 {
+  font-size: 2rem;
+}
+footer.footer {
+  padding:2rem 1.5rem;
+  background-color:rgba(75, 52, 136, 0.445);
 }
