@@ -1,7 +1,10 @@
 <% redirect_if_not_logged_in %>
 
 <h2>Find Dreams by Category</h2>
+<br/>
 
 <% @categories.each do |c| %>
-    <%= link_to c.name, category_path(c) %><br>
+    <button class='button is-medium is-rounded'>
+        <%= link_to c.name, category_path(c) %>
+    </button><span>
 <% end %>

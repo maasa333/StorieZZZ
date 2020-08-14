@@ -1,6 +1,6 @@
 class DreamsController < ApplicationController
     before_action :set_dream, except: [:new, :create, :index]
-    before_action :check_ownership, only: [:update, :destroy]
+    before_action :check_ownership, only: [:edit, :update, :destroy]
     
     def new
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
@@ -31,7 +31,6 @@ class DreamsController < ApplicationController
 
     def edit
         @categories = Category.all.map{|c| [ c.name, c.id ]}
-        redirect_to dreams_path if current_user.id != @dream.user_id
     end
 
     def update
@@ -41,18 +40,11 @@ class DreamsController < ApplicationController
         else
             render :edit   
         end
-        !check_ownership
-        flash[:alert] = "You can only edit your own dream" #not displaying
-        redirect_to dreams_path
     end
 
     def destroy
         @dream.destroy
         redirect_to user_path
-
-        !check_ownership
-        flash[:alert] = "You can only delete your own dream"
-        redirect_to dreams_path
     end
 
     def set_dream
@@ -64,7 +56,10 @@ class DreamsController < ApplicationController
     end
 
     def check_ownership
-        @dream.user_id == current_user.id
+        if @dream.user_id != current_user.id
+            flash[:alert] = "You can only make changes to your own dreams"
+            redirect_to dreams_path
+        end
     end
 
     private
