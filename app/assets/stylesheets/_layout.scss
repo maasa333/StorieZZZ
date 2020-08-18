@@ -5,14 +5,14 @@ body {
   height:100vh;
 }
 .header {
-  background-color: rgba(37, 38, 116, 0.699);
+  background-color: rgba(19, 20, 70, 0.781);
   padding:1.5rem 1.5rem;
 }
 .section {
   display:flex;
   flex:1 0 auto;
 }
-a.navbar-item {
+div.level-item {
   font-size: xx-large;
   color: white;
   font-family: 'Courier New', Courier, monospace;    
@@ -20,9 +20,11 @@ a.navbar-item {
 }
 section.section div.container h2 {
   font-size: 2rem;
+  color: white;
 }
 section.section div.container h3 {
   font-size: 1.3rem;
+  color: white;
 }
 section.section div.container h4 {
   font-size: 1rem;
@@ -33,7 +35,7 @@ section.section div.container h5 {
 }
 footer.footer {
   padding:2rem 1.5rem;
-  background-color:rgba(10, 116, 202, 0.445);
+  background-color: rgba(19, 20, 70, 0.404);
 }
 div#error_explanation {
   margin: 10px 22px;
@@ -43,6 +45,28 @@ div#error_explanation {
   background-color: #FFD2D2;
   border-radius:.5em;
 }
-div.bg-img {
-  background-image: url(night-sky.jpg);
+section.section {
+  background-image: url("night-sky.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: auto;
+}
+button#category > a {
+  color: white;
+}
+div.container {
+  color: white;
+}
+div.box {
+  background-color: opacify($color: #00000054, $amount: 0);
+  color: white;
+}
+table.table {
+  background-color: opacify($color: #0000002c, $amount: 0);
+  color: white;
+}
+th {
+  background-color: rgba(234, 236, 240, 0.699);
 }

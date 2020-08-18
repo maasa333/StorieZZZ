@@ -7,10 +7,11 @@
 <br><br>
 
 <h4>Description:</h4> <%= @dream.description %>
+<br>
 
 <% if current_user.id == @dream.user_id %>
-    <%= link_to "Edit", edit_dream_path, class: "button is-primary is-rounded" %>
-    <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded" %>
+    <%= link_to "Edit", edit_dream_path, class: "button is-primary is-rounded is-small" %>
+    <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded is-small" %>
 <% end %>
 <br>
 <br>

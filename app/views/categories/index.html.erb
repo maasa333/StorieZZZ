@@ -4,7 +4,7 @@
 <br>
 
 <% @categories.each do |c| %>
-    <button class='button is-primary is-outlined is-medium is-rounded'>
+    <button id="category" class='button is-primary is-outlined is-medium is-rounded'>
         <%= link_to c.name, category_path(c) %>
     </button><span>
 <% end %>
