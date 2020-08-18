@@ -6,7 +6,8 @@
     <%= f.text_area :description, class: "textarea" %><br>
 
     <%= f.label :category %>
-    <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: "Select One" %><br>
+    <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: "Select One" %>
+    <br><br>
 
     <%= f.submit "Submit", class: "button is-primary is-rounded" %>
 <% end %>

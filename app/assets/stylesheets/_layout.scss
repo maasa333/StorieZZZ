@@ -12,7 +12,7 @@ body {
   display:flex;
   flex:1 0 auto;
 }
-div.level-item {
+a.navbar-item {
   font-size: xx-large;
   color: white;
   font-family: 'Courier New', Courier, monospace;    
@@ -33,7 +33,7 @@ section.section div.container h5 {
 }
 footer.footer {
   padding:2rem 1.5rem;
-  background-color:rgba(75, 52, 136, 0.445);
+  background-color:rgba(10, 116, 202, 0.445);
 }
 div#error_explanation {
   margin: 10px 22px;
@@ -42,4 +42,7 @@ div#error_explanation {
   color: #D8000C;
   background-color: #FFD2D2;
   border-radius:.5em;
+}
+div.bg-img {
+  background-image: url(night-sky.jpg);
 }

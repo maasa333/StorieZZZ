@@ -1,9 +1,11 @@
 <% redirect_if_not_logged_in %>
 
 <h4>Date:</h4> <%= format_date(@dream.date) %>
-<br>
+<br><br>
+
 <h4>Category:</h4> <%= @dream.category.name %>
-<br>
+<br><br>
+
 <h4>Description:</h4> <%= @dream.description %>
 
 <% if current_user.id == @dream.user_id %>

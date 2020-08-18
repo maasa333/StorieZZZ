@@ -14,30 +14,36 @@
   <body>
     <header class="header">
       <div class="container">
-        <nav class="level">
-          <div class="level-left">
-            <div class="level-item">
+        <nav class="navbar is-fixed-top is-spaced is-info" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item">
               StorieZZZ
-            </div>
+            </a>
           </div>
-          <div class="level-right">
-            <p class="level-item">
-              <% if logged_in? %>
-                <%= link_to "My Dreams", root_path, class: "button is-primary is-inverted is-outlined" %>
-                <%= link_to "New Dream", new_dream_path, class: "button is-primary is-inverted is-outlined" %>
-                <%= link_to "See Everyone's Dreams", dreams_path, class: "button is-primary is-inverted is-outlined" %> 
-                <%= link_to "Log Out", logout_path, class: "button is-danger is-inverted is-outlined" %>
-              <% else %>
-                <%= link_to "Sign Up", signup_path, class: "button is-primary is-inverted is-outlined" %>
-                <%= link_to "Log In", login_path, class: "button is-primary is-inverted is-outlined" %>
-                <%= link_to "Log In with Google", '/auth/google_oauth2', method: :post, class: "button is-primary is-inverted is-outlined" %>
-              <% end %>
-            </p>
+          <div class="navbar-menu is-active">
+            <div class="navbar-end">
+              <a class="navbar-item">
+                <% if logged_in? %>
+                  <%= link_to "My Dreams", root_path, class: "button is-primary is-inverted is-outlined" %>
+                  <%= link_to "New Dream", new_dream_path, class: "button is-primary is-inverted is-outlined" %>
+                  <%= link_to "See Everyone's Dreams", dreams_path, class: "button is-primary is-inverted is-outlined" %> 
+                  <%= link_to "Log Out", logout_path, class: "button is-danger is-inverted is-outlined" %>
+                <% else %>
+                  <%= link_to "Sign Up", signup_path, class: "button is-primary is-inverted is-outlined" %>
+                  <%= link_to "Log In", login_path, class: "button is-primary is-inverted is-outlined" %>
+                  <%= link_to "Log In with Google", '/auth/google_oauth2', method: :post, class: "button is-primary is-inverted is-outlined" %>
+                <% end %>
+              </a>
+            </div>
           </div>
         </nav>
       </div>
     </header>
   <section class="section">
+    <div class="bg-img">
+      
+    </div>
+
     <div class="container">
 
       <% flash.each do |type, msg| %>
@@ -45,13 +51,14 @@
           <%= msg %>
         </div>
       <% end %>
-
+      
       <%= yield %>
+
     </div>
   </section>
   <footer class="footer">
     <div class="container">
-      Copyright © 2019 StorieZZZ. All rights reserved.
+      Copyright © <%= Time.current.year %> StorieZZZ. All rights reserved.
     </div>
   </footer>
   </body>
