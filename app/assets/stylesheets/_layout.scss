@@ -20,11 +20,9 @@ div.level-item {
 }
 section.section div.container h2 {
   font-size: 2rem;
-  color: white;
 }
 section.section div.container h3 {
   font-size: 1.3rem;
-  color: white;
 }
 section.section div.container h4 {
   font-size: 1rem;
@@ -46,27 +44,27 @@ div#error_explanation {
   border-radius:.5em;
 }
 section.section {
-  background-image: url("night-sky.jpg");
+  background-image: url("moon-border.png");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: auto;
 }
-button#category > a {
-  color: white;
-}
+// button#category > a {
+//   color: white;
+// }
 div.container {
-  color: white;
+  margin-left: 7em;
+  margin-right: 7em;
 }
-div.box {
-  background-color: opacify($color: #00000054, $amount: 0);
-  color: white;
-}
-table.table {
-  background-color: opacify($color: #0000002c, $amount: 0);
-  color: white;
-}
+// div.box {
+//   background-color: opacify($color: #00000054, $amount: 0);
+//   // color: white;
+// }
+// table.table {
+//   background-color: opacify($color: #0000002c, $amount: 0);
+//   // color: white;
+// }
 th {
   background-color: rgba(234, 236, 240, 0.699);
 }
