@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #users
-goku = User.create(username: "Goku", email: "goku@mail.com", password: "iamgoku")
-ranma = User.create(username: "Ranma", email: "ranma@mail.com", password: "iamranma")
-usagi = User.create(username: "Usagi", email: "usagi@mail.com", password: "iamusagi")
-eren = User.create(username: "Eren", email: "eren@mail.com", password: "iameren")
-pusheen = User.create(username: "Pusheen", email: "pusheen@mail.com", password: "iampusheen")
-garfield = User.create(username: "Garfield", email: "garfield@mail.com", password: "iamgarfield")
-smudege = User.create(username: "Smudge", email: "smudge@mail.com", password: "iamsmudge")
+# goku = User.create(username: "Goku", email: "goku@mail.com", password: "iamgoku")
+# ranma = User.create(username: "Ranma", email: "ranma@mail.com", password: "iamranma")
+# usagi = User.create(username: "Usagi", email: "usagi@mail.com", password: "iamusagi")
+# eren = User.create(username: "Eren", email: "eren@mail.com", password: "iameren")
+# pusheen = User.create(username: "Pusheen", email: "pusheen@mail.com", password: "iampusheen")
+# garfield = User.create(username: "Garfield", email: "garfield@mail.com", password: "iamgarfield")
+# smudege = User.create(username: "Smudge", email: "smudge@mail.com", password: "iamsmudge")
 
 #categories
 happy = Category.create(name: "Happy")
