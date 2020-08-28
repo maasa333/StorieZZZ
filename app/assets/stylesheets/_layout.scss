@@ -44,7 +44,8 @@ div#error_explanation {
   border-radius:.5em;
 }
 section.section {
-  background-image: url("moon-border.png");
+  background: image-url("moon-border.png");
+  // background-image: url("moon-border.png");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
