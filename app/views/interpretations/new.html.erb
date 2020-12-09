@@ -2,13 +2,16 @@
 
 <%= render partial: 'layouts/errors', locals: {object: @interpretation}%>
 
-<h2>Interpretation of Dream</h2>
+<h3>Interpretation of:</h3>
 
-<p>The Dream: <%= @dream.description %></p>
+<div class="dream-desc">
+    <%= @dream.description %>
+</div>
 
-<%= form_for([@dream, @interpretation]) do |f| %>
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "textarea" %><br>
+<div class="interpretation">
+    <%= form_for([@dream, @interpretation]) do |f| %>
+        <%= f.text_area :description, class: "textarea", placeholder: "Describe your interpretation of this dream here" %><br>
 
-    <%= f.submit "Submit", class: "button is-primary is-rounded" %>
-<% end %>
+        <%= f.submit "Submit", class: "button is-primary is-rounded" %>
+    <% end %>
+</div>

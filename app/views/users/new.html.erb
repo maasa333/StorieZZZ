@@ -1,16 +1,33 @@
 <%= render partial: 'layouts/errors', locals: {object: @user}%>
 
-<h2>Sign Up Page</h2>
+<h3>Sign Up Page</h3>
 
-<%= form_for(@user) do |f| %>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %><br>
+<div class="auth-form">
+    <%= form_for(@user) do |f| %>
+        <div class="labels">
+            <%= f.label :username %><br>
+        </div>
+        
+        <div class="input-fields">
+            <%= f.text_field :username %><br>
+        </div>
 
-    <%= f.label :email %><br>
-    <%= f.email_field :email %><br>
+        <div class="labels">
+            <%= f.label :email %><br>
+        </div>
+        
+        <div class="input-fields">
+            <%= f.email_field :email %><br>
+        </div>
 
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
+        <div class="labels">
+            <%= f.label :password %><br>
+        </div>
+            
+        <div class="input-fields">
+            <%= f.password_field :password %><br>
+        </div>
 
-    <%= f.submit "Create New Account" %>
-<% end %>
+        <%= f.submit "Create New Account" %>
+    <% end %>
+</div>

@@ -1,11 +1,21 @@
-<h2>Login Page</h2>
+<h3>Login Page</h3>
 
-<%= form_for :user do |f| %>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %><br>
+<div class="auth-form">
+    <%= form_for :user do |f| %>
+        <div class="labels">
+            <%= f.label :username %>
+        </div>
+        <div class="input-fields">
+            <%= f.text_field :username %>
+        </div>
 
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
+        <div class="labels">
+            <%= f.label :password %>
+        </div>
+        <div class="input-fields">
+            <%= f.password_field :password %>
+        </div>
 
-    <%= f.submit "Log In" %>
-<% end %>
+        <%= f.submit "Log In" %>
+    <% end %>
+</div>

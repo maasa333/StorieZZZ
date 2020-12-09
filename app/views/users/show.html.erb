@@ -1,21 +1,24 @@
 <% redirect_if_not_logged_in %>
 
-<h2 class='has-text-centered has-text-weight-medium'>Welcome <%= current_user.username %>!</h2>
+<div class="welcome-text">
+    Welcome <%= current_user.username %>!
+</div>
 
-<h3 class='is-size-3'>My Dreams</h3>
-<br>
+<h3>My Dreams</h3>
 
-<table class="table">
-    <tr>
-        <th>Category</th>
-        <th>Dream Description</th>
-        <th>Date</th>
-    </tr>
-    <% current_user.dreams.date_order.each do |dream| %>
-    <tr>
-        <td><%= dream.category.name %></td>
-        <td><%= link_to dream.description, dream_path(dream) %></td>
-        <td><%= format_date(dream.date) %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="columns is-mobile is-centered">
+    <table class="table">
+        <tr>
+            <th>Category</th>
+            <th>Dream Description</th>
+            <th>Date</th>
+        </tr>
+        <% current_user.dreams.date_order.each do |dream| %>
+        <tr>
+            <td><%= dream.category.name %></td>
+            <td><%= link_to dream.description, dream_path(dream) %></td>
+            <td><%= format_date(dream.date) %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>

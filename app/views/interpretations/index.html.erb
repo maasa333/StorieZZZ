@@ -1,20 +1,17 @@
 <% redirect_if_not_logged_in %>
 
-<h4>The Dream:</h4>
-<br>
-<h5><%= @dream.description %></h5>
-<br>
+<h3>Interpretations of:</h3>
 
-<div class="box is-rounded">
-    <h4>Interpretations of this dream:</h4>
-    <br>
+<div class="dream-desc">
+    <%= @dream.description %>
+</div>
+
     <ul>
     <% @interpretations.each do |i| %>
-        <li><%= i.description %>
+        <li class="interpretations"><%= i.description %>
         <% if i.user_id == current_user.id %>
-            <%= link_to "Delete", interpretation_path(i), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded is-small" %>
+            <br><%= link_to "Delete", interpretation_path(i), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded is-small" %>
         </li>
         <% end%>
     <% end %>
     </ul>
-<div>

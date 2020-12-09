@@ -4,9 +4,33 @@ body {
   justify-content:space-between;
   height:100vh;
 }
+div.welcome-page {
+  color: #ffffff;
+  background-color: rgba(26, 37, 48, 0.281);
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-bottom: 2em;
+  border-radius: 25px;
+}
+h2 {
+  font-size: 2.7em;
+  margin-bottom: 1em;
+}
+h3 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+h4 {
+  color: white;
+  font-size: 1.4em;
+}
 .header {
   background-color: rgba(19, 20, 70, 0.781);
-  padding:1.5rem 1.5rem;
+  padding: 1.5em;
+  padding-left: 3.5em;
 }
 .section {
   display:flex;
@@ -17,35 +41,25 @@ div.level-item {
   color: white;
   font-family: 'Courier New', Courier, monospace;    
   font-weight: 600;
-}
-section.section div.container h2 {
-  font-size: 2rem;
-}
-section.section div.container h3 {
-  font-size: 1.3rem;
-}
-section.section div.container h4 {
-  font-size: 1rem;
-  font-weight: bold;
-}
-section.section div.container h5 {
-  font-size: 1rem;
+  margin-left: -3em;
 }
 footer.footer {
-  padding:2rem 1.5rem;
-  background-color: rgba(19, 20, 70, 0.404);
+  padding: 1rem;
+  background-color: rgba(19, 20, 70, 0.616);
+  color: white;
+  text-align: center;
 }
 div#error_explanation {
-  margin: 10px 22px;
-  font-size: 1.2em;
+  padding:  2em;
+  margin: 5px 11px;
+  font-size: 1em;
   vertical-align: middle;
-  color: #D8000C;
-  background-color: #FFD2D2;
+  color: #fdc4c7;
+  background-color: #f51f1f;
   border-radius:.5em;
 }
 section.section {
-  background: image-url("moon-border.png");
-  // background-image: url("moon-border.png");
+  background: image-url("moon-sky.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -55,6 +69,79 @@ div.container {
   margin-left: 7em;
   margin-right: 7em;
 }
+table.table {
+  border-radius: 15px;
+  background-color: rgba(205, 229, 240, 0.959);
+}
 th {
-  background-color: rgba(234, 236, 240, 0.699);
+  background-color: rgba(189, 233, 253, 0.795);
+  border-radius: 15px;
+  line-height: 2.2em;
+}
+.date-field {
+  margin-bottom: 2em;
+}
+.desc-field .textarea {
+  margin-bottom: 5px;
+  background-color: rgba(213, 237, 248, 0.877);
+  border-radius: 10px;
+}
+.date-selector {
+  background-color: rgba(213, 237, 248, 0.877);
+  border-radius: 10px;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+select#dream_category_id {
+  background-color: rgba(213, 237, 248, 0.877);
+  border-radius: 10px;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-bottom: 12px;
+}
+.dream-desc {
+  padding: 2em;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+  background-color: rgba(189, 233, 253, 0.87);
+  border-radius: 25px;
+}
+.dream-btns {
+  text-align: right;
+  margin-bottom: 2em;
+}
+.interpret-btns {
+  text-align: center;
+}
+div.welcome-text {
+  text-align: left;
+  font-size: 2em;
+  color: #FFD2D2;
+  margin-left: -3em;
+  margin-top: -1em;
+  margin-bottom: 1.1em;
+}
+.auth-form {
+  text-align: center;
+  color: white;
+}
+.labels {
+  margin-bottom: 0.5em;
+}
+.input-fields {
+  margin-bottom: 1em;
+}
+.interpretation textarea {
+  margin-top: 3em;
+  padding: 2em;
+  background-color: rgba(188, 252, 225, 0.87);
+  border-radius: 25px;
+}
+.interpretations {  
+  text-align: center;
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: rgba(188, 252, 225, 0.87);
+  border-radius: 25px;
 }

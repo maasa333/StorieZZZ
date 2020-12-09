@@ -1,14 +1,19 @@
 <%= form_for(@dream) do |f| %>
     <div class="form">
-        <%= f.label :date %>
-        <%= f.date_field :date %><br>
+        <div class="date-field has-text-white">
+            <%= f.label :date %>
+            <%= f.date_field :date, class: "date-selector" %>
+        </div>
 
-        <%= f.label :description %>
-        <%= f.text_area :description, class: "textarea" %><br>
+        <div class="desc-field has-text-white">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "textarea", placeholder: "Describe your dream here" %><br>
+        </div>
 
-        <%= f.label :category %>
-        <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: "Select One" %>
-        <br><br>
+        <div class="category-field has-text-white">
+            <%= f.label :category %>
+            <%= f.collection_select :category_id, Category.alpha, :id, :name, prompt: "Select One", class: "category-selector" %>
+        </div>
 
         <%= f.submit "Submit", class: "button is-primary is-rounded" %>
     </div>

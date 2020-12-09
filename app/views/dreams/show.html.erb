@@ -1,19 +1,25 @@
 <% redirect_if_not_logged_in %>
 
-<h4>Date:</h4> <%= format_date(@dream.date) %>
-<br><br>
+<div class="columns is-centered">
+    <div class="column is-9 has-text-white">
+        Date:  <strong class="has-text-white"><%= format_date(@dream.date) %></strong>
+    </div>
+    <div class="column is-2 has-text-white">
+        Category:  <strong class="has-text-white"><%= @dream.category.name %></strong>
+    </div>
+</div>
 
-<h4>Category:</h4> <%= @dream.category.name %>
-<br><br>
+<div class="content dream-desc">
+    <%= @dream.description %>
+</div>
 
-<h4>Description:</h4> <%= @dream.description %>
-<br>
-
-<% if current_user.id == @dream.user_id %>
-    <%= link_to "Edit", edit_dream_path, class: "button is-primary is-rounded is-small" %>
-    <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-rounded is-small" %>
-<% end %>
-<br>
-<br>
-<%= link_to "Interpret this dream", new_dream_interpretation_path(@dream), class: "button is-info is-rounded" %>
-<%= link_to "See other interpretations", dream_interpretations_path(@dream), class: "button is-info is-rounded" %>
+<div class="dream-btns">
+    <% if current_user.id == @dream.user_id %>
+        <%= link_to "Edit", edit_dream_path, class: "button is-primary is-rounded is-small" %>
+        <%= link_to "Delete", dream_path(@dream), method: :delete, data: {confirm: "Are you sure?   "}, class: "button is-danger is-rounded is-small" %>
+    <% end %>
+</div>
+<div class="interpret-btns">
+    <%= link_to "Interpret this dream", new_dream_interpretation_path(@dream), class: "button   is-info is-rounded" %>
+    <%= link_to "See other interpretations", dream_interpretations_path(@dream), class: "button is-info is-rounded" %>
+</div>

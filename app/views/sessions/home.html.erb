@@ -1,8 +1,11 @@
 <% if logged_in? %>
     <h2>Hi <%= current_user.username %>!</h2>
 <% else %>
-    <h2 class='has-text-centered has-text-weight-semibold'>Welcome to StorieZZZ</h2>
-    <br>
-    <h3 class='has-text-centered'>StorieZZZ is a Rails web application for memorializing dreams you've had.
-    <br>Share them anonymously with the StorieZZZ community, and have fun interpreting each others' dreams!</h3>
+    <div class="welcome-page">
+        <h3>Welcome to StorieZZZ</h3>
+
+        <h4>StorieZZZ is a Rails web application for memorializing dreams you've had.    
+        <br>
+        Share them anonymously with the StorieZZZ community, and have fun interpreting each others' dreams!</h4>
+    </div>
 <% end %>
